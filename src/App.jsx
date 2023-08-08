@@ -7,8 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div>HR OPTIMIZATION TOOL
-
+    <div>
       <Home/>
     </div>
 
