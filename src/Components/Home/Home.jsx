@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import './Home.css'
 import { tick } from '../../assets/export';
+import Resume from '../../MVP/Resume/Resume';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -21,7 +22,7 @@ function Home() {
   return (
 
     <div>
-      <Navbar />
+      <Navbar name = "check MVP" link = '/description_ranker' />
 
       <div className="HomeContainer">
 
@@ -86,6 +87,8 @@ function Home() {
           </div>
         </div>
       </div>
+
+      {/* <Resume/> */}
 
     </div>
   )

@@ -1,0 +1,41 @@
+.jobDescriptionText {
+    color: var(--teritary-color);
+}
+
+.JobDescMailWrapper {
+
+    position: relative;
+    display: inline-block;
+
+    width: 38.625rem;
+    padding: 26px;
+    /* margin: 24px 0; */
+    border-radius: 5px;
+    font-size: 16px;
+    border-radius: 3.75rem;
+    border: 1px solid var(--neutral-300, #EFF0F6);
+    background: var(--neutral-100, #FFF);
+    box-shadow: 0px 8px 25px 0px rgba(13, 10, 44, 0.06);
+
+}
+
+.jobDescBtn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+
+}
+
+.JobDescMailWrapper p{
+    text-align: left;
+    font-size: 14px;
+    border-radius: 3.75rem;
+    color: var(--quaternary-color);
+}
+
+@media screen and (max-width:560px) {
+    .JobDescMailWrapper{
+        padding:22px;
+    }
+    
+}

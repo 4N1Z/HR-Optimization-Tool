@@ -3,7 +3,6 @@ import { tick } from '../../assets/export';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
 import "./Resume.css"
-
 function Resume() {
 
   
@@ -85,7 +84,8 @@ function Resume() {
 
     return (
         <div>
-            <Navbar />
+
+            <Navbar name = "Job Description" link = "/description_ranker"/>
             <div className="HomeContainer">
                 <div className="textContainer animate-fade-in-top-to-bottom">
                     <h5 className="topTitle">HR OPTIMIZATION TOOl</h5>
