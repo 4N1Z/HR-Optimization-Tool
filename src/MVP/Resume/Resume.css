@@ -15,3 +15,10 @@
     display: flex;
     justify-content: space-around;
 }
+.passive{
+    /* background-color: var(--quaternary-color); */
+    filter: opacity(50%);
+}
+.giveColor{
+    color: var(--tertiary-color);
+}
