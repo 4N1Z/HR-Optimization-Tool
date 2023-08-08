@@ -22,7 +22,7 @@ function Home() {
   return (
 
     <div>
-      <Navbar name = "check MVP" link = '/resume_ranker' />
+      <Navbar name = "check MVP" link = '/description_ranker' />
 
       <div className="HomeContainer">
 
