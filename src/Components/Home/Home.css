@@ -1,0 +1,212 @@
+.HomeContainer {
+    margin-inline: 6rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2rem;
+
+}
+
+.HomeContainer{
+    background-image: url(../../assets/bg-blob.svg);
+}
+.textContainer{
+    padding-inline: 4rem;
+}
+.topTitle {
+    color: var(--tertiary-color);
+    font-family: 'Inter';
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.125rem;
+    /* 112.5% */
+    letter-spacing: 0.24rem;
+    text-transform: uppercase;
+}
+
+.mainTitle {
+    color: var(--secondary-color);
+    /* text-align: center; */
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: var(--text-size-xl); 
+    padding-block: 1.2rem;
+    /* font-style: normal; */
+    font-weight: 700;
+    line-height: 3rem;
+}
+.subTitle{
+    color: var(--quaternary-color);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    padding:0 3rem 2rem 3rem;
+    /* Paragraph/Default */
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.55rem; /* 166.667% */
+}
+.Btn {
+    /* display: inline-flex; */
+    padding: 1.2rem 2.5rem 1.2rem 2.5rem;
+    justify-content: center;
+    align-items: center;
+    /* gap: 0.3rem; */
+
+    color: var(--primary-color-1);
+    border-radius: 26px;
+    background: var(--primary-color-1, #4A3AFF);
+    box-shadow: 0px 3px 12px 0px rgba(74, 58, 255, 0.18);
+}
+
+/* .sendMainBtn p {
+    color: var(--primary-color);
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: var(--text-size-s);
+}
+ */
+
+
+
+
+/* SubscribeForm.css */
+
+.sendMailBox-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin: 0 auto;
+}
+.sendMailWrapper{
+    position: relative;
+    display: inline-block;
+}
+.sendMailInput {
+    width: 38.625rem;
+    padding: 24px;
+    /* margin: 24px 0; */
+    border-radius: 5px;
+    font-size: 16px;
+    border-radius: 3.75rem;
+    border: 1px solid var(--neutral-300, #EFF0F6);
+    background: var(--neutral-100, #FFF);
+    box-shadow: 0px 8px 25px 0px rgba(13, 10, 44, 0.06);
+}
+
+.sendMailBtn {
+    position: absolute;
+    top: 5px;
+    right:10px;
+    color: var(--primary-color);
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: var(--text-size-s);
+}
+.disclaimerTextBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+.disclaimerText{
+    color: var(--quaternary-color);
+    font-size: calc(var(--text-size-s) - 2px);
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+/* Define the animations */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slide-in {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Apply animations to specific elements */
+.animate-fade-in {
+    animation: fade-in 1s ease forwards;
+}
+
+.animate-slide-in {
+    animation: slide-in 1s ease forwards;
+}
+/* Define the animation */
+@keyframes fade-in-top-to-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to specific elements */
+.animate-fade-in-top-to-bottom {
+    animation: fade-in-top-to-bottom 1s ease forwards;
+}
+
+
+@media screen and (max-width:960px) {
+
+    .HomeContainer{
+        padding-inline: 0px;
+    }
+    .mainTitle{
+        /* font-size: var(--text-size-m); */
+    }
+    .textContainer
+    {
+        padding-inline: 0px;
+    }
+
+}
+
+@media screen and (max-width:740px) {
+
+    .sendMailInput {
+        width: 28rem;
+        padding: 24px;
+    }
+
+
+    
+}
+
+@media screen and (max-width:580px) {
+    .HomeContainer{
+        margin-inline: 2rem;
+    }
+
+ .Btn{
+    border-radius: 20px;
+    padding: 0.8rem 1.75rem 0.8rem 1.75rem;
+    
+ }
+ .sendMailInput {
+    width: 22rem;
+    padding: 20px;
+}
+
+    
+}
+
+@media screen and(max-width:480px) {
+    
+    
+}
+

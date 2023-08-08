@@ -6,7 +6,9 @@ function Navbar() {
   return (
     <div className='navBarContainer'>
         <img src={logoSSW} alt="logo" />
-        <button className="toMVPbtn">MVP</button>
+        <button className="toMVPbtn Btn">
+            <p>check MVP</p>
+        </button>
     
     </div>
   )
