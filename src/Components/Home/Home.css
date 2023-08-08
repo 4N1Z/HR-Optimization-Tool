@@ -6,16 +6,18 @@
     box-sizing: border-box;
     padding: 2rem;
     padding-top: 4rem;
-    animation:1s ease-in-out;
+    animation: 1s ease-in-out;
 
 }
 
-.HomeContainer{
+.HomeContainer {
     background-image: url(../../assets/bg-blob.svg);
 }
-.textContainer{
+
+.textContainer {
     padding-inline: 4rem;
 }
+
 .topTitle {
     color: var(--tertiary-color);
     font-family: 'Inter';
@@ -32,24 +34,27 @@
     color: var(--secondary-color);
     /* text-align: center; */
     font-feature-settings: 'clig' off, 'liga' off;
-    font-size: var(--text-size-xl); 
+    font-size: var(--text-size-xl);
     padding-block: 1.2rem;
     /* font-style: normal; */
     letter-spacing: 0.02rem;
     font-weight: 700;
     line-height: 3rem;
 }
-.subTitle{
+
+.subTitle {
     color: var(--quaternary-color);
     text-align: center;
     font-feature-settings: 'clig' off, 'liga' off;
-    padding:0 3rem 2rem 3rem;
+    padding: 0 3rem 2rem 3rem;
     /* Paragraph/Default */
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.55rem; /* 166.667% */
+    line-height: 1.55rem;
+    /* 166.667% */
 }
+
 .Btn {
     /* display: inline-flex; */
     padding: 1.2rem 2.5rem 1.2rem 2.5rem;
@@ -86,10 +91,12 @@
     max-width: 300px;
     margin: 0 auto;
 }
-.sendMailWrapper{
+
+.sendMailWrapper {
     position: relative;
     display: inline-block;
 }
+
 .sendMailInput {
     width: 38.625rem;
     padding: 24px;
@@ -105,35 +112,37 @@
 .sendMailBtn {
     position: absolute;
     top: 5px;
-    right:10px;
+    right: 10px;
     color: var(--primary-color);
     text-align: center;
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
     font-size: var(--text-size-s);
 }
-.disclaimerTextBox{
+
+.disclaimerTextBox {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 1rem;
     gap: 1rem;
 }
-.disclaimerText{
+
+.disclaimerText {
     color: var(--quaternary-color);
     font-size: calc(var(--text-size-s) - 2px);
     font-style: normal;
     font-weight: 400;
 }
 
-.navigationBox{
+.navigationBox {
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
-.forNavBox{
+.forNavBox {
 
     display: flex;
     padding: 2rem;
@@ -149,11 +158,13 @@
     box-shadow: 0px 6.91259765625px 21.601869583129883px 0px rgba(0, 0, 0, 0.06);
 
 }
-.techStackUsedBox{
+
+.techStackUsedBox {
     display: flex;
     flex-direction: row;
 }
-.forNavBox h2{
+
+.forNavBox h2 {
     color: var(--tertiary-color);
     font-size: var(--text-size-m);
     font-weight: 700;
@@ -161,15 +172,18 @@
     text-transform: capitalize;
     padding-bottom: 1rem;
 }
-.navDesc{
+
+.navDesc {
     color: var(--quaternary-color);
     font-feature-settings: 'clig' off, 'liga' off;
     font-size: var(--text-size-s);
     font-style: normal;
     font-weight: 400;
-    line-height: 150%; /* 24.885px */
+    line-height: 150%;
+    /* 24.885px */
 }
-.techBox{
+
+.techBox {
     border: 1px solid var(--tertiary-color);
     padding: 0.5rem;
     border-radius: 1rem;
@@ -182,7 +196,8 @@
     text-transform: capitalize;
 
 }
-.whtWeDoTitle{
+
+.whtWeDoTitle {
     padding-bottom: 4rem;
     display: flex;
     flex-direction: row;
@@ -191,25 +206,28 @@
     justify-content: flex-end;
 }
 
-.whtWeDoTitleText{
+.whtWeDoTitleText {
     color: var(--tertiary-color);
     text-align: right;
     font-family: Inter;
     font-size: var(--text-size-m);
     font-style: normal;
     font-weight: 600;
-    line-height: 1.125rem; /* 69.231% */
+    line-height: 1.125rem;
+    /* 69.231% */
     letter-spacing: 0.39rem;
     text-transform: uppercase;
 }
-.smallLine{
+
+.smallLine {
 
     width: 1.75rem;
     height: 3px;
     border-radius: 24px;
     background-color: var(--tertiary-color);
 }
-.line{
+
+.line {
     width: 100%;
     height: 1px;
     border-radius: 24px;
@@ -219,13 +237,23 @@
 
 /* Define the animations */
 @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slide-in {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(0); }
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 /* Apply animations to specific elements */
@@ -236,12 +264,14 @@
 .animate-slide-in {
     animation: slide-in 1s ease forwards;
 }
+
 /* Define the animation */
 @keyframes fade-in-top-to-bottom {
     from {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -256,14 +286,15 @@
 
 @media screen and (max-width:960px) {
 
-    .HomeContainer{
+    .HomeContainer {
         padding-inline: 0px;
     }
-    .mainTitle{
+
+    .mainTitle {
         /* font-size: var(--text-size-m); */
     }
-    .textContainer
-    {
+
+    .textContainer {
         padding-inline: 0px;
     }
 
@@ -275,40 +306,43 @@
         width: 28rem;
         padding: 24px;
     }
-    .navigationBox{
+
+    .navigationBox {
         grid: none;
         display: flex;
         flex-direction: column;
     }
 
 
-    
+
 }
 
 @media screen and (max-width:580px) {
-    .HomeContainer{
+    .HomeContainer {
         margin-inline: 2rem;
     }
 
- .Btn{
-    border-radius: 20px;
-    padding: 0.8rem 1.75rem 0.8rem 1.75rem;
-    
- }
- .sendMailInput {
-    width: 22rem;
-    padding: 20px;
-}
-.whtWeDoTitleText{
-    font-size: var(--text-size-s);
-    letter-spacing: 0.24rem;
+    .Btn {
+        border-radius: 20px;
+        padding: 0.8rem 1.75rem 0.8rem 1.75rem;
+
+    }
+
+    .sendMailInput {
+        width: 22rem;
+        padding: 20px;
+    }
+
+    .whtWeDoTitleText {
+        font-size: var(--text-size-s);
+        letter-spacing: 0.24rem;
+    }
+
+    .subTitle {
+        padding: 0 1.5rem 2rem 1.5rem;
+    }
+
+
 }
 
-    
-}
-
-@media screen and(max-width:480px) {
-
-    
-}
-
+@media screen and(max-width:480px) {}
