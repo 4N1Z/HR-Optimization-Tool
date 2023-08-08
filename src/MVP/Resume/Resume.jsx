@@ -3,68 +3,101 @@ import { tick } from '../../assets/export';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
 import "./Resume.css"
-
 function Resume() {
 
-    const [resume, setResume] = useState(null);
+  
+    const [resumes, setResumes] = useState([]);
     const [jobDesc, setJobDesc] = useState(null);
+    const [analyseDisabled, setAnalyseDisabled] = useState(true);
+    const allowedFileTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
+    useEffect(() => {
+        sessionStorage.setItem('resumes', JSON.stringify(resumes));
+        sessionStorage.removeItem('jobDesc');
+    }, [resumes]);
+
+    useEffect(() => {
+        const storedResumes = sessionStorage.getItem('resumes');
+        if (storedResumes) {
+            setResumes(JSON.parse(storedResumes));
+        }
+
+        const storedJobDesc = sessionStorage.getItem('jobDesc');
+        if (storedJobDesc) {
+            setJobDesc(JSON.parse(storedJobDesc));
+        }
+    }, []);
     
-    const fileUpload = (i) => {
-        // Create a hidden file input element
+    const uploadResume = () => {
         var fileInput = document.createElement('input');
         fileInput.type = 'file';
         fileInput.style.display = 'none';
+        fileInput.multiple = true;
+        fileInput.accept = ".pdf,.docx";
 
-        // Trigger the file input click event
         fileInput.click();
 
-        // Listen for file selection
-        fileInput.addEventListener('change', (i) => {
+        fileInput.addEventListener('change', (event) => {
+            var selectedFiles = Array.from(fileInput.files);
+            const validFiles = selectedFiles.filter(file => allowedFileTypes.includes(file.type));
+            setResumes([...resumes, ...validFiles]);
+        });
+    }
+
+    const uploadJobDescription = () => {
+        var fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.style.display = 'none';
+        fileInput.accept = ".pdf,.docx";
+
+        fileInput.click();
+
+        fileInput.addEventListener('change', (event) => {
             var selectedFile = fileInput.files[0];
-            console.log(selectedFile);
-            if (i === 1) {
-                setResume(selectedFile);
-                console.log("I am working");
-            }
-            else {
+            if (selectedFile && allowedFileTypes.includes(selectedFile.type)) {
                 setJobDesc(selectedFile);
             }
         });
     }
 
+    useEffect(() => {
+        if (resumes.length > 0 && jobDesc) {
+            setAnalyseDisabled(false);
+            sessionStorage.setItem('jobDesc', JSON.stringify(jobDesc));
+        }
+    }, [resumes, jobDesc]);
 
-    const handleSubmit = (event) => {
+    const handleDeleteResume = (index) => {
+        const updatedResumes = resumes.filter((_, i) => i !== index);
+        setResumes(updatedResumes);
+    }
+
+    const donotdeletefunction = (event) => {
         event.preventDefault();
-        // You can perform further actions here, such as sending the email to a server.
     };
 
-    useEffect(() => {
-        // remove passive class from button when resume is uploaded
-        if (resume) {
-            document.getElementById('jobDescBtn').classList.remove('passive');
-            document.getElementById('jobDescBtn').disabled = false;
+    const handleSubmit = () => {
+        console.log('submitting');
+        console.log(resumes);
+        console.log(jobDesc);
+    }
 
-        }
-    }, [resume]);
     return (
-
         <div>
 
             <Navbar name = "Job Description" link = "/description_ranker"/>
             <div className="HomeContainer">
-
                 <div className="textContainer animate-fade-in-top-to-bottom">
                     <h5 className="topTitle">HR OPTIMIZATION TOOl</h5>
                     <h1 className="mainTitle">Rank resume against a job description</h1>
                     <h4 className="subTitle">Do you want resumes scored against job description and send custom mails to the recruiter highlighting applicants proficient fields and score ?</h4>
                 </div>
 
-                <form className="formStyle animate-fade-in" onSubmit={handleSubmit}>
-                    <div className="sendMailWrapper resumeWrapper">
-                        <button onClick={() => { fileUpload(1) }} className='smallBtnStyle Btn'>Upload Resume</button>
-                        <button onClick={() => { fileUpload(2) }} className='smallBtnStyle Btn passive' id="jobDescBtn">Upload Job Description</button>
-                        <button className='smallBtnStyle Btn passive' type='submit'>Analyse</button>
-
+                <form className="formStyle animate-fade-in" onSubmit={donotdeletefunction}>
+                    <div className="sendMailWrapper">
+                        <button onClick={uploadResume} className='smallBtnStyle Btn'>Upload Resume</button>
+                        <button onClick={uploadJobDescription} className='smallBtnStyle Btn'>Upload Job Description</button>
+                        <button className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} disabled={analyseDisabled} onClick={handleSubmit}>Analyse</button>
                     </div>
                 </form>
 
@@ -72,13 +105,35 @@ function Resume() {
                     <p className="disclaimerText"><span className='giveColor'>.docx</span> or <span className='giveColor'>.pdf</span> format files required</p>
                 </div>
                 <div className="line"></div>
-                <div className='sendMailBox'>
-                    <h1></h1>
+                <div className=''>
+                    {resumes.length > 0 && (
+                        <div>
+                            <h3>Uploaded Resumes:</h3>
+                            <ul className='uploadedResumeUl'>
+                                {resumes.map((file, index) => (
+                                    <li key={index} className='uploadedResumeList'>
+                                        <span className='giveColor'>{file.name}</span>
+                                        {/* <span>({formatFileSize(file.size)})</span> */}
+                                        <button onClick={() => handleDeleteResume(index)} className='resumeDeleteBtn'>Delete</button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
             </div>
-
         </div>
     )
 }
 
-export default Resume
+// function formatFileSize(size) {
+//     if (size < 1024) {
+//         return size + ' B';
+//     } else if (size < 1048576) {
+//         return (size / 1024).toFixed(2) + ' KB';
+//     } else {
+//         return (size / 1048576).toFixed(2) + ' MB';
+//     }
+// }
+
+export default Resume;

@@ -61,7 +61,7 @@
     font-weight: 700;
     font-size: var(--text-size-s);
     cursor: pointer;
-    margin: 0 .4em;
+    margin:.4em;
 }
 .smallBtnStyle:hover{
     color: var(--primary-color);
@@ -74,10 +74,34 @@
 .passive{
     /* background-color: var(--quaternary-color); */
     filter: opacity(50%);
-   
-    /* border: 1px solid var(--teritary-color); */
+    text-decoration: none !important;
+    cursor: not-allowed;
 }
 
 .giveColor{
     color: var(--tertiary-color);
 }
+.uploadedResumeList{
+    display: flex;
+    justify-content: space-between;
+    padding: .4em;
+    border-radius: 1em;
+}
+.uploadedResumeUl{
+    display: grid;
+    gap: .4em;
+}
+.resumeDeleteBtn{
+    padding: .5em;
+    border-radius: .4em;
+    box-sizing: border-box;
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+/* @media screen and (max-width: 430px) {
+    .uploadedResumeList{
+        width: 100%;
+    }
+} */
