@@ -82,7 +82,7 @@
 
 /* SubscribeForm.css */
 
-.sendMailBox-container {
+/* .sendMailBox-container {
     text-align: center;
     padding: 20px;
     background-color: #f7f7f7;
@@ -90,7 +90,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 300px;
     margin: 0 auto;
-}
+} */
 
 .sendMailWrapper {
     position: relative;
