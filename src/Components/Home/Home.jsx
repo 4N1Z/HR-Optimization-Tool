@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import './Home.css'
 import { tick } from '../../assets/export';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -59,23 +60,27 @@ function Home() {
 
         <div className="navigationBox animate-fade-in-top-to-bottom">
           <div className="forNavBox">
-            <h2 className="navTitle">Rank your Resume</h2>
+            <Link to={'/resume_ranker'}>
+              <h2 className="navTitle">Rank your Resume</h2>
+            </Link>
             <p className="navDesc">Art direction is the process of bringing together all of the creative 
             elements of a project to create a cohesive and visually stunning end product. I work with clients to develop a concept and bring it to life through art direction. 
             I believe that attention to detail and a clear vision are key to creating truly memorable designs.</p>
             <div className="techStackUsedBox">
-              <div className="techBox">NLP</div>
+              <div className="techBox">LLM</div>
               <div className="techBox">NLP</div>
             </div>
           </div>
 
           <div className="forNavBox">
-            <h2 className="navTitle">Job Description</h2>
+            <Link to = {'/description_ranker'}>
+              <h2 className="navTitle">Job Description</h2>
+            </Link>
             <p className="navDesc">Art direction is the process of bringing together all of the creative 
             elements of a project to create a cohesive and visually stunning end product. I work with clients to develop a concept and bring it to life through art direction. 
             I believe that attention to detail and a clear vision are key to creating truly memorable designs.</p>
             <div className="techStackUsedBox">
-              <div className="techBox">NLP</div>
+              <div className="techBox">LLM</div>
               <div className="techBox">NLP</div>
             </div>
           </div>
