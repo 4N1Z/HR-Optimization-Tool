@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import './Home.css'
 import { tick } from '../../assets/export';
+import Resume from '../../MVP/Resume/Resume';
 
 function Home() {
 
@@ -81,6 +82,8 @@ function Home() {
           </div>
         </div>
       </div>
+
+      <Resume/>
 
     </div>
   )
