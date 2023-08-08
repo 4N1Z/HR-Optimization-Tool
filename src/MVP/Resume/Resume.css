@@ -18,6 +18,8 @@
 .passive{
     /* background-color: var(--quaternary-color); */
     filter: opacity(50%);
+    text-decoration: none !important;
+    cursor: not-allowed;
 }
 .giveColor{
     color: var(--tertiary-color);
