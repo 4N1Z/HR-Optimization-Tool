@@ -1,4 +1,4 @@
-import logoSSW from './Logo-SSW.png';
+import logoSSW from './Logo-SSW.svg';
 
 export {
     logoSSW,
