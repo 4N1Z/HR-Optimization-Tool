@@ -30,7 +30,7 @@ function Home() {
           <h4 className="subTitle">Do you want resumes scored against job description and send custom mails to the recruiter highlighting applicants proficient fields and score ?</h4>
         </div>
 
-        <form className="sendMailBox" onSubmit={handleSubmit}>
+        <form className="sendMailBox animate-fade-in" onSubmit={handleSubmit}>
           <div className="sendMailWrapper">
           <input
             className='sendMailInput'
@@ -44,7 +44,7 @@ function Home() {
           </div>
         </form>
 
-        <div className="disclaimerTextBox">
+        <div className="disclaimerTextBox animate-fade-in">
           <img src={tick} width = "18px" alt="tick"/>
           <p className="disclaimerText">It's 100% free and we will send more than one email per month</p>
         </div>
@@ -52,7 +52,7 @@ function Home() {
 
         {/* Two Buttons */}
 
-        <div className="navigationBox">
+        <div className="navigationBox animate-fade-in-top-to-bottom">
           <div className="forNavBox">
             <h2 className="navTitle">Rank your Resume</h2>
             <p className="navDesc">Art direction is the process of bringing together all of the creative 

@@ -6,6 +6,7 @@
     box-sizing: border-box;
     padding: 2rem;
     padding-top: 4rem;
+    animation:1s ease-in-out;
 
 }
 
@@ -34,6 +35,7 @@
     font-size: var(--text-size-xl); 
     padding-block: 1.2rem;
     /* font-style: normal; */
+    letter-spacing: 0.02rem;
     font-weight: 700;
     line-height: 3rem;
 }
@@ -202,7 +204,7 @@
 
 /* Apply animations to specific elements */
 .animate-fade-in {
-    animation: fade-in 1s ease forwards;
+    animation: fade-in 2s ease forwards;
 }
 
 .animate-slide-in {
