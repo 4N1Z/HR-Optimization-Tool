@@ -52,6 +52,11 @@ function Home() {
 
         {/* Two Buttons */}
 
+        <div className="whtWeDoTitle animate-fade-in">
+          <div className="smallLine"></div>
+          <h2 className="whtWeDoTitleText">What we do</h2>
+        </div>
+
         <div className="navigationBox animate-fade-in-top-to-bottom">
           <div className="forNavBox">
             <h2 className="navTitle">Rank your Resume</h2>
