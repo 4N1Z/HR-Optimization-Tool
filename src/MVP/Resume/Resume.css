@@ -58,3 +58,28 @@
 
 
 
+
+.smallBtnStyle{
+    color: var(--primary-color);
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: var(--text-size-s);
+    cursor: pointer;
+    margin: 0 .4em;
+}
+.smallBtnStyle:hover{
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.formStyle{
+    display: flex;
+    justify-content: space-around;
+}
+.passive{
+    /* background-color: var(--quaternary-color); */
+    filter: opacity(50%);
+}
+.giveColor{
+    color: var(--tertiary-color);
+}
