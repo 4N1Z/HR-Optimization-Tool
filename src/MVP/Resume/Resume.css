@@ -54,11 +54,6 @@
     user-select: none; /* Disable text selection */
 }
 
-
-
-
-
-
 .smallBtnStyle{
     color: var(--primary-color);
     text-align: center;
@@ -79,7 +74,10 @@
 .passive{
     /* background-color: var(--quaternary-color); */
     filter: opacity(50%);
+   
+    /* border: 1px solid var(--teritary-color); */
 }
+
 .giveColor{
     color: var(--tertiary-color);
 }

@@ -8,6 +8,7 @@ function Resume() {
 
     const [resume, setResume] = useState(null);
     const [jobDesc, setJobDesc] = useState(null);
+    
     const fileUpload = (i) => {
         // Create a hidden file input element
         var fileInput = document.createElement('input');
@@ -59,7 +60,7 @@ function Resume() {
                 </div>
 
                 <form className="formStyle animate-fade-in" onSubmit={handleSubmit}>
-                    <div className="sendMailWrapper">
+                    <div className="sendMailWrapper resumeWrapper">
                         <button onClick={() => { fileUpload(1) }} className='smallBtnStyle Btn'>Upload Resume</button>
                         <button onClick={() => { fileUpload(2) }} className='smallBtnStyle Btn passive' id="jobDescBtn">Upload Job Description</button>
                         <button className='smallBtnStyle Btn passive' type='submit'>Analyse</button>

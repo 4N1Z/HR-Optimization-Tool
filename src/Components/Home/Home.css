@@ -67,33 +67,11 @@
     box-shadow: 0px 3px 12px 0px rgba(74, 58, 255, 0.18);
 }
 
-/* .sendMainBtn p {
-    color: var(--primary-color);
-    text-align: center;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 700;
-    font-size: var(--text-size-s);
-}
- */
-
-
-
-
-/* SubscribeForm.css */
-
-/* .sendMailBox-container {
-    text-align: center;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    margin: 0 auto;
-} */
 
 .sendMailWrapper {
     position: relative;
     display: inline-block;
+
 }
 
 .sendMailInput {
@@ -103,8 +81,8 @@
     border-radius: 5px;
     font-size: 16px;
     border-radius: 3.75rem;
-    border: 1px solid var(--neutral-300, #EFF0F6);
-    background: var(--neutral-100, #FFF);
+    /* border: 1px solid var(--neutral-300, #EFF0F6); */
+    background: var(--primary-color);
     box-shadow: 0px 8px 25px 0px rgba(13, 10, 44, 0.06);
 }
 
