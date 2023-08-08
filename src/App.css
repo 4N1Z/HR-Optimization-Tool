@@ -19,7 +19,7 @@ html {
 body {
 
     padding: 0;
-    margin: 0;
+    margin-inline: 6.188rem;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     text-rendering: optimizeLegibility;

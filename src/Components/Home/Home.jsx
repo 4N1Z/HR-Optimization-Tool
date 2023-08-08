@@ -1,15 +1,12 @@
 import React from 'react'
+import Navbar from '../Navbar/Navbar'
+import './Home.css'
 
 function Home() {
   return (
     <div>
 
-        <div className="navbar">
-            <img src="" alt="" className="logo" />
-            <div className="homeBtn">
-                <button className="btn">Home</button>
-            </div>
-        </div>
+      <Navbar/>
 
     </div>
   )
