@@ -6,12 +6,29 @@ import "./Resume.css"
 
 function Resume() {
 
+  
     const [resumes, setResumes] = useState([]);
     const [jobDesc, setJobDesc] = useState(null);
     const [analyseDisabled, setAnalyseDisabled] = useState(true);
     const allowedFileTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
 
+    useEffect(() => {
+        sessionStorage.setItem('resumes', JSON.stringify(resumes));
+        sessionStorage.removeItem('jobDesc');
+    }, [resumes]);
 
+    useEffect(() => {
+        const storedResumes = sessionStorage.getItem('resumes');
+        if (storedResumes) {
+            setResumes(JSON.parse(storedResumes));
+        }
+
+        const storedJobDesc = sessionStorage.getItem('jobDesc');
+        if (storedJobDesc) {
+            setJobDesc(JSON.parse(storedJobDesc));
+        }
+    }, []);
+    
     const uploadResume = () => {
         var fileInput = document.createElement('input');
         fileInput.type = 'file';
@@ -24,7 +41,7 @@ function Resume() {
         fileInput.addEventListener('change', (event) => {
             var selectedFiles = Array.from(fileInput.files);
             const validFiles = selectedFiles.filter(file => allowedFileTypes.includes(file.type));
-            setResumes(validFiles);
+            setResumes([...resumes, ...validFiles]);
         });
     }
 
@@ -45,14 +62,19 @@ function Resume() {
     }
 
     useEffect(() => {
-        if (resumes.length>0 && jobDesc) {
+        if (resumes.length > 0 && jobDesc) {
             setAnalyseDisabled(false);
+            sessionStorage.setItem('jobDesc', JSON.stringify(jobDesc));
         }
     }, [resumes, jobDesc]);
-    
+
+    const handleDeleteResume = (index) => {
+        const updatedResumes = resumes.filter((_, i) => i !== index);
+        setResumes(updatedResumes);
+    }
+
     const donotdeletefunction = (event) => {
         event.preventDefault();
-        // You can perform further actions here, such as sending the email to a server.
     };
 
     const handleSubmit = () => {
@@ -60,6 +82,7 @@ function Resume() {
         console.log(resumes);
         console.log(jobDesc);
     }
+
     return (
         <div>
             <Navbar />
@@ -74,7 +97,7 @@ function Resume() {
                     <div className="sendMailWrapper">
                         <button onClick={uploadResume} className='smallBtnStyle Btn'>Upload Resume</button>
                         <button onClick={uploadJobDescription} className='smallBtnStyle Btn'>Upload Job Description</button>
-                        <button className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} onClick={handleSubmit} disabled={analyseDisabled}>Analyse</button>
+                        <button className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} disabled={analyseDisabled} onClick={handleSubmit}>Analyse</button>
                     </div>
                 </form>
 
@@ -82,12 +105,35 @@ function Resume() {
                     <p className="disclaimerText"><span className='giveColor'>.docx</span> or <span className='giveColor'>.pdf</span> format files required</p>
                 </div>
                 <div className="line"></div>
-                <div className='sendMailBox'>
-                    <h1></h1>
+                <div className=''>
+                    {resumes.length > 0 && (
+                        <div>
+                            <h3>Uploaded Resumes:</h3>
+                            <ul className='uploadedResumeUl'>
+                                {resumes.map((file, index) => (
+                                    <li key={index} className='uploadedResumeList'>
+                                        <span className='giveColor'>{file.name}</span>
+                                        {/* <span>({formatFileSize(file.size)})</span> */}
+                                        <button onClick={() => handleDeleteResume(index)} className='resumeDeleteBtn'>Delete</button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
     )
 }
+
+// function formatFileSize(size) {
+//     if (size < 1024) {
+//         return size + ' B';
+//     } else if (size < 1048576) {
+//         return (size / 1024).toFixed(2) + ' KB';
+//     } else {
+//         return (size / 1048576).toFixed(2) + ' MB';
+//     }
+// }
 
 export default Resume;
