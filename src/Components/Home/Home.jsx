@@ -4,6 +4,7 @@ import './Home.css'
 import { tick } from '../../assets/export';
 import Resume from '../../MVP/Resume/Resume';
 import { Link } from 'react-router-dom';
+import JobDescOut from '../../MVP/JobDesc/JobDescOut';
 
 function Home() {
 
@@ -87,6 +88,7 @@ function Home() {
           </div>
         </div>
       </div>
+      {/* <JobDescOut/> */}
 
       {/* <Resume/> */}
 
