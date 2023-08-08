@@ -6,55 +6,60 @@ import "./Resume.css"
 
 function Resume() {
 
-    const [resume, setResume] = useState(null);
+    const [resumes, setResumes] = useState([]);
     const [jobDesc, setJobDesc] = useState(null);
     const [analyseDisabled, setAnalyseDisabled] = useState(true);
+    const allowedFileTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
 
     const uploadResume = () => {
-        // Create a hidden file input element
         var fileInput = document.createElement('input');
         fileInput.type = 'file';
         fileInput.style.display = 'none';
+        fileInput.multiple = true;
+        fileInput.accept = ".pdf,.docx";
 
-        // Trigger the file input click event
         fileInput.click();
 
-        // Listen for file selection
         fileInput.addEventListener('change', (event) => {
-            var selectedFile = fileInput.files[0];
-            console.log(selectedFile);
-            setResume(selectedFile);
+            var selectedFiles = Array.from(fileInput.files);
+            const validFiles = selectedFiles.filter(file => allowedFileTypes.includes(file.type));
+            setResumes(validFiles);
         });
     }
 
     const uploadJobDescription = () => {
-        // Create a hidden file input element
         var fileInput = document.createElement('input');
         fileInput.type = 'file';
         fileInput.style.display = 'none';
+        fileInput.accept = ".pdf,.docx";
 
-        // Trigger the file input click event
         fileInput.click();
 
-        // Listen for file selection
         fileInput.addEventListener('change', (event) => {
             var selectedFile = fileInput.files[0];
-            console.log(selectedFile);
-            setJobDesc(selectedFile);
+            if (selectedFile && allowedFileTypes.includes(selectedFile.type)) {
+                setJobDesc(selectedFile);
+            }
         });
     }
+
     useEffect(() => {
-        if (resume && jobDesc) {
+        if (resumes.length>0 && jobDesc) {
             setAnalyseDisabled(false);
         }
-    }, [resume, jobDesc]);
-    const handleSubmit = (event) => {
+    }, [resumes, jobDesc]);
+    
+    const donotdeletefunction = (event) => {
         event.preventDefault();
-        console.log("We are fecked");
-
         // You can perform further actions here, such as sending the email to a server.
     };
 
+    const handleSubmit = () => {
+        console.log('submitting');
+        console.log(resumes);
+        console.log(jobDesc);
+    }
     return (
         <div>
             <Navbar />
@@ -65,11 +70,11 @@ function Resume() {
                     <h4 className="subTitle">Do you want resumes scored against job description and send custom mails to the recruiter highlighting applicants proficient fields and score ?</h4>
                 </div>
 
-                <form className="formStyle animate-fade-in" onSubmit={handleSubmit}>
+                <form className="formStyle animate-fade-in" onSubmit={donotdeletefunction}>
                     <div className="sendMailWrapper">
                         <button onClick={uploadResume} className='smallBtnStyle Btn'>Upload Resume</button>
                         <button onClick={uploadJobDescription} className='smallBtnStyle Btn'>Upload Job Description</button>
-                        <button className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} type='submit' disabled={analyseDisabled}>Analyse</button>
+                        <button className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} onClick={handleSubmit} disabled={analyseDisabled}>Analyse</button>
                     </div>
                 </form>
 
