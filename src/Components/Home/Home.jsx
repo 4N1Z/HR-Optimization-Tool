@@ -48,9 +48,33 @@ function Home() {
           <img src={tick} width = "18px" alt="tick"/>
           <p className="disclaimerText">It's 100% free and we will send more than one email per month</p>
         </div>
-
         <div className="line"></div>
 
+        {/* Two Buttons */}
+
+        <div className="navigationBox">
+          <div className="forNavBox">
+            <h2 className="navTitle">Rank your Resume</h2>
+            <p className="navDesc">Art direction is the process of bringing together all of the creative 
+            elements of a project to create a cohesive and visually stunning end product. I work with clients to develop a concept and bring it to life through art direction. 
+            I believe that attention to detail and a clear vision are key to creating truly memorable designs.</p>
+            <div className="techStackUsedBox">
+              <div className="techBox">NLP</div>
+              <div className="techBox">NLP</div>
+            </div>
+          </div>
+
+          <div className="forNavBox">
+            <h2 className="navTitle">Job Description</h2>
+            <p className="navDesc">Art direction is the process of bringing together all of the creative 
+            elements of a project to create a cohesive and visually stunning end product. I work with clients to develop a concept and bring it to life through art direction. 
+            I believe that attention to detail and a clear vision are key to creating truly memorable designs.</p>
+            <div className="techStackUsedBox">
+              <div className="techBox">NLP</div>
+              <div className="techBox">NLP</div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>

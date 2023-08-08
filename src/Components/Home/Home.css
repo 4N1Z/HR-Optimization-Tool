@@ -5,6 +5,7 @@
     text-align: center;
     box-sizing: border-box;
     padding: 2rem;
+    padding-top: 4rem;
 
 }
 
@@ -123,6 +124,70 @@
     font-weight: 400;
 }
 
+.navigationBox{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.forNavBox{
+
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8.641px;
+    flex: 1 0 0;
+    align-self: stretch;
+    text-align: left;
+
+    border-radius: 17.281px;
+    background: #FFF;
+    box-shadow: 0px 6.91259765625px 21.601869583129883px 0px rgba(0, 0, 0, 0.06);
+
+}
+.techStackUsedBox{
+    display: flex;
+    flex-direction: row;
+}
+.forNavBox h2{
+    color: var(--tertiary-color);
+    font-size: var(--text-size-m);
+    font-weight: 700;
+    letter-spacing: -0.277px;
+    text-transform: capitalize;
+    padding-bottom: 1rem;
+}
+.navDesc{
+    color: var(--quaternary-color);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: var(--text-size-s);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24.885px */
+}
+.techBox{
+    border: 1px solid var(--tertiary-color);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--tertiary-color);
+    font-size: var(--text-size-s);
+    font-weight: 500;
+    letter-spacing: -0.277px;
+    text-transform: capitalize;
+
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    border-radius: 24px;
+    background-color: var(--tertiary-color);
+    margin-block: 5rem;
+}
 
 /* Define the animations */
 @keyframes fade-in {
@@ -182,6 +247,11 @@
         width: 28rem;
         padding: 24px;
     }
+    .navigationBox{
+        grid: none;
+        display: flex;
+        flex-direction: column;
+    }
 
 
     
@@ -206,7 +276,7 @@
 }
 
 @media screen and(max-width:480px) {
-    
+
     
 }
 
