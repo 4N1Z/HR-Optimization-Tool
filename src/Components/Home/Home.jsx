@@ -22,7 +22,7 @@ function Home() {
   return (
 
     <div>
-      <Navbar />
+      <Navbar name = "check MVP" link = '/resume_ranker' />
 
       <div className="HomeContainer">
 
@@ -88,7 +88,7 @@ function Home() {
         </div>
       </div>
 
-      <Resume/>
+      {/* <Resume/> */}
 
     </div>
   )

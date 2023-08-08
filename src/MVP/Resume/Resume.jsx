@@ -3,6 +3,7 @@ import { tick } from '../../assets/export';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
 import "./Resume.css"
+
 function Resume() {
 
     const [resume, setResume] = useState(null);
@@ -48,7 +49,7 @@ function Resume() {
 
         <div>
 
-            <Navbar />
+            <Navbar name = "Job Description" link = "/description_ranker"/>
             <div className="HomeContainer">
 
                 <div className="textContainer animate-fade-in-top-to-bottom">
@@ -79,3 +80,4 @@ function Resume() {
     )
 }
 
+export default Resume
