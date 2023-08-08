@@ -1,0 +1,30 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    line-height: normal;
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+body {
+
+    padding: 0;
+    margin: 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  
+  }
+  
+  
