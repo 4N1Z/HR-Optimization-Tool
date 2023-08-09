@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { tick } from '../../assets/export';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
+import axios from 'axios';
 import "./Resume.css"
 function Resume() {
 
@@ -76,10 +77,23 @@ function Resume() {
         event.preventDefault();
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         console.log('submitting');
-        console.log(resumes);
-        console.log(jobDesc);
+        const formData = {
+            "jobDesc": jobDesc,
+            "resumes": resumes
+        }
+        await axios.post('http://192.168.29.116:8000/upload-pdf-and-text/', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        }).then((response) => {
+            console.log(response);
+        }
+        ).catch((error) => {
+            console.log(error);
+        }
+        );
     }
 
     return (
