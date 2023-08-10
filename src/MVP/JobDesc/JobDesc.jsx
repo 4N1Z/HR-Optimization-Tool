@@ -56,7 +56,6 @@ function JobDesc() {
         // console.log(response.data.analysis)
         // const analysisData = response.data.analysis;
         navigate('/output_jobDescription', {analysisData});
-
         setLoading(false);
       }
       );
