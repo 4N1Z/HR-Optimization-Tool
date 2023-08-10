@@ -2,15 +2,27 @@ import React from 'react'
 import './Resume.css'
 import { Link } from 'react-router-dom'
 import Navbar from '../../Components/Navbar/Navbar'
+import emailjs from 'emailjs-com';
 
 function ResumeOut() {
 
     const sendMail = () => {
-        
-        console.log('Mail Sent');
-        alert('Mail Sent');
-    }
-
+        const templateParams = {
+            to_email: '20am014@sctce.ac.in',
+            subject: 'Hello from React!',
+            message: 'This is a test email sent from my React app.'
+        };
+    
+        emailjs.send('your_service_id', 'your_template_id', templateParams, 'your_user_id')
+            .then(response => {
+                console.log('Mail Sent', response);
+                alert('Mail Sent');
+            })
+            .catch(error => {
+                console.error('Error sending mail:', error);
+                alert('Error sending mail');
+            });
+    };
     return (
         <div>
             <Navbar name="back" link="/description_ranker" />
@@ -50,6 +62,7 @@ function ResumeOut() {
                             {/* <Link to='/resume_ranker'>
                                 <button className="goToResume Btn"> <p>Send Mail</p> </button>
                             </Link> */}
+
                                 <button onClick={sendMail} className="goToResume Btn"> <p>Send Mail</p> </button>
 
                         </div>

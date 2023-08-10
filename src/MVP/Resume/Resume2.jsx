@@ -7,7 +7,7 @@ import axios from 'axios';
 import "./Resume.css"
 
 function Resume2() {
-    
+
     const navigate = useNavigate();
 
 
