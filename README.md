@@ -43,7 +43,7 @@ The Aptitude Tester feature includes an online aptitude quiz round that assists 
 
 - Backend Repository: [HR-Backend](https://github.com/FAHADPN/HR-API)
 - Frontend Repository: [HR-Frontend](https://github.com/4N1Z/HR-Optimization-Tool)
-- Aptitude Test Repository: [HR-Apptitude_Test](https://github.com/aswnss-m/apptitude_test)
+- Aptitude Test Repository: [HR-Aptitude_Test](https://github.com/aswnss-m/apptitude_test)
 
 Daya HR Automation Tool aims to revolutionize HR processes, enabling companies to efficiently handle job applications, identify top candidates, and facilitate a smooth and effective interview process. Feel free to explore the provided links to delve deeper into the tool's functionalities and implementation. If you have any questions or need assistance, please don't hesitate to contact us.
 
