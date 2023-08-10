@@ -83,7 +83,7 @@ function Resume() {
             "jobDesc": jobDesc,
             "resumes": resumes
         }
-        await axios.post('http://192.168.29.116:8000/upload-pdf-and-text/', formData, {
+        await axios.post('http://192.168.29.116:8000/upload-resume-and-job/', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
