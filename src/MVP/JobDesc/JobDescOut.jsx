@@ -8,8 +8,17 @@ function JobDescOut() {
 
     const location = useLocation();
     const analysisData = location.state;
-    console.log(analysisData);
-
+    const points = analysisData.split('\n').map((point, index) => (
+        <p key={index} style={{
+            lineHeight: '2.1',
+        }}>
+          <span style={{
+            fontWeight: 'bold',
+            color: 'var(--secondary-color)'
+          }}>{point.substring(0, point.indexOf(':')+1)}</span>
+          {point.substring(point.indexOf(':') + 1)}
+        </p>
+      ));
     return (
         <div>
             <Navbar name="back" link="/description_ranker" />
@@ -19,8 +28,8 @@ function JobDescOut() {
                     <div className="firstBox">
                         <h2>Here is the description after analysis</h2>
                         <div className="contentBox">
-                            <div className="parent contentInsideBox">
-                                <div className="child1 itemBox">
+                            <div className=" contentInsideBox">
+                                {/* <div className="child1 itemBox">
                                     <h1>NAME</h1>
                                     <p>John Doe</p>
                                 </div>
@@ -31,12 +40,10 @@ function JobDescOut() {
                                 <div className="child3 itemBox">
                                     <h1>NAME</h1>
                                     <p>John Doe</p>
-                                </div>
+                                </div> */}
                                 <div className="child4 itemBox">
                                     <h1>Desciption</h1>
-                                    <p>
-                                        {analysisData}
-                                    </p>
+                                    {points}
                                 </div>
                             </div>
 

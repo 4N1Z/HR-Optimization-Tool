@@ -54,10 +54,8 @@ function JobDesc() {
         }
       }).then((response) => {
         console.log(response);
-        // console.log(response.data.analysis)
-        // const analysisData = response.data.analysis;
-        navigate('/output_jobDescription', {state: analysisData});
         setLoading(false);
+        navigate('/output_jobDescription', {state: response.data.analysis});
       }
       );
     } catch (error) {
