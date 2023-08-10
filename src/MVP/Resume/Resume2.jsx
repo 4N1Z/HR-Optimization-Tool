@@ -106,7 +106,7 @@ function Resume2() {
 
     return (
         <div>
-            <Navbar name="Job Description" link="/description_ranker" />
+            <Navbar name="back" link="/description_ranker" />
             <div className="HomeContainer">
                 <div className="textContainer animate-fade-in-top-to-bottom">
                     <h5 className="topTitle">Resume Analyser</h5>

@@ -49,12 +49,15 @@ function JobDesc() {
         }
       }).then((response) => {
         console.log(response);
+        // console.log(response.data.analysis)
+        // const analysisData = response.data.analysis;
+        navigate('/output_jobDescription', {analysisData});
+
       }
       );
     } catch (error) {
       console.log(error);
     }
-    navigate('/output_jobDescription')
 
   };
 

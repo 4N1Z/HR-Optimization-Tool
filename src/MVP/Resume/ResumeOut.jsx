@@ -6,8 +6,9 @@ import Navbar from '../../Components/Navbar/Navbar'
 function ResumeOut() {
 
     const sendMail = () => {
-        alert('Mail Sent');
+        
         console.log('Mail Sent');
+        alert('Mail Sent');
     }
 
     return (
