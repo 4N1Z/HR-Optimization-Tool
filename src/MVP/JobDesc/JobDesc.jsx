@@ -73,7 +73,7 @@ function JobDesc() {
     {loading ? ( <div className="centerContainer">
       <Loader />
     </div>) : (<div>
-      <Navbar name="Resume" link="/resume_ranker" />
+      <Navbar name="Resume" link="/resume_rankerForMVP" />
       <div className="HomeContainer">
 
         <div className="textContainer animate-fade-in-top-to-bottom">
