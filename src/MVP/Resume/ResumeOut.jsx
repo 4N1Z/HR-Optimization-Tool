@@ -1,4 +1,7 @@
 import React from 'react'
+import './Resume.css'
+import { Link } from 'react-router-dom'
+import Navbar from '../../Components/Navbar/Navbar'
 
 function ResumeOut() {
     return (
@@ -8,25 +11,32 @@ function ResumeOut() {
                 <div className="outputContainer">
                     <h2 className="titleOut">Result of Analysis</h2>
                     <div className="firstBox">
-                        <h2>Here is the description after analysis</h2>
+                        
                         <div className="contentBox">
-                            <div className="parent contentInsideBox">
-                                <div className="child1 itemBox">
-                                    <h1>NAME</h1>
-                                    <p>John Doe</p>
+                            <h2 className='resumeTitleOut'>Total Resumes Analysed</h2>
+                            <h1 className='resumeNumberOut'>240</h1>
+                            <h2 className='resumeTitleOut'>Top Resumes</h2>
+
+                            <div className="topResumes">
+                                <div className="scoresNames">
+                                    <h2>Name</h2>
+                                    <div className="topRankers">
+                                        <h4>ANIZ BIN NOwshad</h4>
+                                        <h4>ANIZ BIN NOwshad</h4>
+                                        <h4>ANIZ BIN NOwshad</h4>
+                                        <h4>ANIZ BIN NOwshad</h4>
+                                        <h4>ANIZ BIN NOwshad</h4>
+                                    </div>
                                 </div>
-                                <div className="child2 itemBox">
-                                    <h1>NAME</h1>
-                                    <p>John Doe</p>
-                                </div>
-                                <div className="child3 itemBox">
-                                    <h1>NAME</h1>
-                                    <p>John Doe</p>
-                                </div>
-                                <div className="child4 itemBox">
-                                    <h1>Desciption</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros
-                                        elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p>
+                                <div className="scoresNames">
+                                    <h2>Scores</h2>
+                                    <div className="topRankers">
+                                        <h4>76</h4>
+                                        <h4>76</h4>
+                                        <h4>76</h4>
+                                        <h4>76</h4>
+                                        <h4>76</h4>
+                                    </div>
                                 </div>
                             </div>
 

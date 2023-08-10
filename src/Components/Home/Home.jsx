@@ -5,6 +5,8 @@ import { tick } from '../../assets/export';
 import Resume from '../../MVP/Resume/Resume';
 import { Link } from 'react-router-dom';
 import JobDescOut from '../../MVP/JobDesc/JobDescOut';
+import ResumeOut from '../../MVP/Resume/ResumeOut';
+import Resume2 from '../../MVP/Resume/Resume2';
 
 function Home() {
 
@@ -89,6 +91,8 @@ function Home() {
         </div>
       </div>
       {/* <JobDescOut/> */}
+      {/* <ResumeOut/> */}
+      {/* <Resume2/> */}
 
       {/* <Resume/> */}
 

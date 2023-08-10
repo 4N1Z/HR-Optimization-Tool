@@ -1,4 +1,4 @@
-.jobDescriptionText{
+.jobDescriptionText {
     color: var(--teritary-color);
 }
 
@@ -33,6 +33,7 @@
     box-shadow: 0px 8px 25px 0px rgba(13, 10, 44, 0.06);
     display: none;
 }
+
 .fileUploadLabel {
     /* ... Existing styles ... */
     margin-bottom: 10px;
@@ -51,47 +52,54 @@
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
     font-size: var(--text-size-s);
-    user-select: none; /* Disable text selection */
+    user-select: none;
+    /* Disable text selection */
 }
 
-.smallBtnStyle{
+.smallBtnStyle {
     color: var(--primary-color);
     text-align: center;
     font-family: 'DM Sans', sans-serif;
     font-weight: 700;
     font-size: var(--text-size-s);
     cursor: pointer;
-    margin:.4em;
+    margin: .4em;
 }
-.smallBtnStyle:hover{
+
+.smallBtnStyle:hover {
     color: var(--primary-color);
     text-decoration: underline;
 }
-.formStyle{
+
+.formStyle {
     display: flex;
     justify-content: space-around;
 }
-.passive{
+
+.passive {
     /* background-color: var(--quaternary-color); */
     filter: opacity(50%);
     text-decoration: none !important;
     cursor: not-allowed;
 }
 
-.giveColor{
+.giveColor {
     color: var(--tertiary-color);
 }
-.uploadedResumeList{
+
+.uploadedResumeList {
     display: flex;
     justify-content: space-between;
     padding: .4em;
     border-radius: 1em;
 }
-.uploadedResumeUl{
+
+.uploadedResumeUl {
     display: grid;
     gap: .4em;
 }
-.resumeDeleteBtn{
+
+.resumeDeleteBtn {
     padding: .5em;
     border-radius: .4em;
     box-sizing: border-box;
@@ -100,8 +108,45 @@
     font-weight: bold;
     cursor: pointer;
 }
-/* @media screen and (max-width: 430px) {
-    .uploadedResumeList{
-        width: 100%;
-    }
-} */
+
+
+/* RESUME OUT */
+
+.topResumes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+}
+
+.resumeTitleOut {
+    color: var(--tertiary-color);
+    font-size: var(--text-size-m);
+    font-weight: 300;
+    line-height: 3.875rem;
+    text-align: center;
+    /* 193.75% */
+    text-transform: uppercase;
+}
+
+.resumeNumberOut {
+    color: #6F6C8F;
+    text-align: center;
+    font-size: var(--text-size-xl);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.875rem;
+    /* 68.889% */
+    text-transform: capitalize;
+}
+
+.scoresNames h4{
+    color: var(--quaternary-color);
+    font-size: var(--text-size-xm);
+    font-weight: 500;
+    color: #6F6C8F;
+
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.5rem; /* 206.667% */
+    text-transform: capitalize;
+}

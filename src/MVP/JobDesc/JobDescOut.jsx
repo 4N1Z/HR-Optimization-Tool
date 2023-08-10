@@ -33,7 +33,7 @@ function JobDescOut() {
                                 </div>
                             </div>
 
-                            <Link to= '/resume_ranker'>
+                            <Link to= '/resume_rankerForMVP'>
                                 <button className="goToResume Btn"> <p>Correct</p> </button>
                             </Link>
 

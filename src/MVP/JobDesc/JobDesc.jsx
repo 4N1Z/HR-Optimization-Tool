@@ -5,6 +5,8 @@ import './JobDesc.css'
 import axios from 'axios';
 function JobDesc() {
 
+  const navigate = useNavigate();
+
   const [jobDesc, setJobDesc] = useState(null);
   const allowedFileTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
   const [analyseDisabled, setAnalyseDisabled] = useState(true);
@@ -52,6 +54,7 @@ function JobDesc() {
     } catch (error) {
       console.log(error);
     }
+    navigate('/output_jobDescription')
 
   };
 
@@ -65,7 +68,7 @@ function JobDesc() {
       <div className="HomeContainer">
 
         <div className="textContainer animate-fade-in-top-to-bottom">
-          <h5 className="topTitle">HR OPTIMIZATION TOOl</h5>
+          <h5 className="topTitle">Job Description Analyser</h5>
           <h1 className="mainTitle">Upload and get score for your <span className='giveColor'> Job Description</span></h1>
           <h4 className="subTitle">Do you want resumes scored against job description and send custom mails to the recruiter highlighting applicants proficient fields and score ?</h4>
         </div>

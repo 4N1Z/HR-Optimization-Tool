@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react'
+import { useState, useEffect } from 'react';
 import { tick } from '../../assets/export';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
 import axios from 'axios';
 import "./Resume.css"
-function Resume() {
+function Resume2() {
 
 
     const [resumes, setResumes] = useState([]);
@@ -62,7 +63,7 @@ function Resume() {
     }
 
     useEffect(() => {
-        if (resumes.length > 0 && jobDesc) {
+        if (resumes.length > 0) {
             setAnalyseDisabled(false);
             sessionStorage.setItem('jobDesc', JSON.stringify(jobDesc));
         }
@@ -97,21 +98,23 @@ function Resume() {
         );
     }
 
+
     return (
         <div>
+
 
             <Navbar name="Job Description" link="/description_ranker" />
             <div className="HomeContainer">
                 <div className="textContainer animate-fade-in-top-to-bottom">
                     <h5 className="topTitle">Resume Analyser</h5>
-                    <h1 className="mainTitle">Rank resume against a job description</h1>
-                    <h4 className="subTitle">Do you want resumes scored against job description and send custom mails to the recruiter highlighting applicants proficient fields and score ?</h4>
+                    <h1 className="mainTitle">Rank resume against the <span className='giveColor'>uploaded</span>  job description</h1>
+                    <h4 className="subTitle">Score against the job description you uploaded and send custom mails to the recruiter highlighting applicants proficient fields and score</h4>
                 </div>
 
                 <form className="formStyle animate-fade-in" onSubmit={donotdeletefunction}>
                     <div className="sendMailWrapper">
                         <button onClick={uploadResume} className='smallBtnStyle Btn'>Upload Resume</button>
-                        <button onClick={uploadJobDescription} className='smallBtnStyle Btn'>Upload Job Description</button>
+                        {/* <button onClick={uploadJobDescription} className='smallBtnStyle Btn'>Upload Job Description</button> */}
                         <button className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} disabled={analyseDisabled} onClick={handleSubmit}>Analyse</button>
                     </div>
                 </form>
@@ -137,18 +140,10 @@ function Resume() {
                     )}
                 </div>
             </div>
+
+
         </div>
     )
 }
 
-// function formatFileSize(size) {
-//     if (size < 1024) {
-//         return size + ' B';
-//     } else if (size < 1048576) {
-//         return (size / 1024).toFixed(2) + ' KB';
-//     } else {
-//         return (size / 1048576).toFixed(2) + ' MB';
-//     }
-// }
-
-export default Resume;
+export default Resume2
