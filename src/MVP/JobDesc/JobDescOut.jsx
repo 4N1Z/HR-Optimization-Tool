@@ -9,16 +9,11 @@ function JobDescOut() {
     const location = useLocation();
     const analysisData = location.state;
     const points = analysisData.split('\n').map((point, index) => (
-        <p key={index} style={{
-            lineHeight: '2.1',
-        }}>
-          <span style={{
-            fontWeight: 'bold',
-            color: 'var(--secondary-color)'
-          }}>{point.substring(0, point.indexOf(':')+1)}</span>
-          {point.substring(point.indexOf(':') + 1)}
+        <p key={index} style={{lineHeight: '2.1',}}>
+            <span style={{fontWeight: 'bold',color: 'var(--secondary-color)'}}>{point.substring(0, point.indexOf(':') + 1)}</span>
+            {point.substring(point.indexOf(':') + 1)}
         </p>
-      ));
+    ));
     return (
         <div>
             <Navbar name="back" link="/description_ranker" />
