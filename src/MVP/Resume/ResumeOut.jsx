@@ -13,7 +13,7 @@ function ResumeOut() {
             message: 'This is a test email sent from my React app.'
         };
     
-        emailjs.send('your_service_id', 'your_template_id', templateParams, 'your_user_id')
+        emailjs.send('service_5ktc26c', 'template_tgpovaj', templateParams, 'aniz')
             .then(response => {
                 console.log('Mail Sent', response);
                 alert('Mail Sent');
