@@ -8,23 +8,23 @@ function Loader() {
     <>
     <div className="loaderText top-2">
         <img src={tick} alt="tick_icon" />
-        I am top 2
+        I am top G
     </div>
     <div className="loaderText top-1">
         <img src={tick} alt="tick_icon" />
-        I am top 1
+        Always Believe in yourself
     </div>
     <div className="loaderText first">
         <img src={tick} alt="tick_icon" />
-        I am first
+        Push past your limits
     </div>
     <div className="loaderText bottom-1">
         <img src={tick} alt="tick_icon" />
-        I am bottom 1
+        Go beyond plus ultra
     </div>
     <div className="loaderText bottom-2">
         <img src={tick} alt="tick_icon" />
-        I am bottom 2
+        They dont know me son
     </div>
     </>
   )

@@ -55,7 +55,7 @@ function JobDesc() {
       }).then((response) => {
         console.log(response);
         setLoading(false);
-        navigate('/output_jobDescription', {state: response.data.analysis});
+        navigate('/output_jobDescription', {state: [response.data.analysis, jobDesc]});
       }
       );
     } catch (error) {
