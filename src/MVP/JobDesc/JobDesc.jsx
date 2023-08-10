@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import { useNavigate } from 'react-router-dom';
+import Loader from '../../Components/Loader';
 import './JobDesc.css'
 import axios from 'axios';
 function JobDesc() {
@@ -10,6 +11,7 @@ function JobDesc() {
   const [jobDesc, setJobDesc] = useState(null);
   const allowedFileTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
   const [analyseDisabled, setAnalyseDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const storedJobDesc = sessionStorage.getItem('jobDesc');
@@ -38,11 +40,13 @@ function JobDesc() {
   }
 
   const handleSubmit = async () => {
+    setLoading(true);
     try {
       console.log('Uploading Job Description')
       const formData = {
         'jobDesc': jobDesc
       }
+      setLoading(true);
       await axios.post('http://192.168.29.116:8000/upload-job-description/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -53,6 +57,7 @@ function JobDesc() {
         // const analysisData = response.data.analysis;
         navigate('/output_jobDescription', {analysisData});
 
+        setLoading(false);
       }
       );
     } catch (error) {
@@ -66,8 +71,11 @@ function JobDesc() {
   };
 
   return (
-    <div>
-      <Navbar name="<" link="/" />
+    <>
+    {loading ? ( <div className="centerContainer">
+      <Loader />
+    </div>) : (<div>
+      <Navbar name="Resume" link="/resume_ranker" />
       <div className="HomeContainer">
 
         <div className="textContainer animate-fade-in-top-to-bottom">
@@ -90,7 +98,8 @@ function JobDesc() {
 
 
       </div>
-    </div>
+    </div>)}
+    </>
   )
 }
 
