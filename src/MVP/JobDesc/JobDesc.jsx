@@ -46,6 +46,7 @@ function JobDesc() {
       const formData = {
         'jobDesc': jobDesc
       }
+<<<<<<< HEAD
       setLoading(true);
 
       await axios.post('http://192.168.29.116:8000/upload-job-description/', formData, {
@@ -61,6 +62,28 @@ function JobDesc() {
       }
       );
     } catch (error) {
+=======
+      // setLoading(true);
+      const analysisData = 'GOT THE RESPONSE !'
+      console.log(analysisData);
+      navigate('/output_jobDescription', {analysisData});
+      // await axios.post('http://192.168.29.116:8000/upload-job-description/', formData, {
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data'
+      //   }
+      // }).then((response) => {
+
+      //   console.log(response);
+      //   console.log(response.data.analysis)
+      //   const analysisData = response.data.analysis;
+      //   navigate('/output_jobDescription', {analysisData});
+      //   setLoading(false);
+        
+      // }
+      // );
+    } 
+    catch (error) {
+>>>>>>> dd13c4c45a02aa3103a98f5c83ac7e6f4c02567d
       console.log(error);
     }
 

@@ -5,8 +5,14 @@ import Navbar from '../../Components/Navbar/Navbar'
 import { useLocation } from 'react-router-dom';
 
 function JobDescOut() {
+
     const location = useLocation();
+<<<<<<< HEAD
     const analysisData = location.state;
+=======
+    console.log('In the Job Description Output Page')
+    const analysisData = location.state.analysisData;
+>>>>>>> dd13c4c45a02aa3103a98f5c83ac7e6f4c02567d
     console.log(analysisData);
 
     return (
