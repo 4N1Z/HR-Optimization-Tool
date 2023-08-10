@@ -109,7 +109,7 @@ function Resume() {
                 </div>
 
                 <form className="formStyle animate-fade-in" onSubmit={donotdeletefunction}>
-                    <div className="sendMailWrapper">
+                    <div className="sendMailWrapper animate-fade-in">
                         <button onClick={uploadResume} className='smallBtnStyle Btn'>Upload Resume</button>
                         <button onClick={uploadJobDescription} className='smallBtnStyle Btn'>Upload Job Description</button>
                         <button className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} disabled={analyseDisabled} onClick={handleSubmit}>Analyse</button>

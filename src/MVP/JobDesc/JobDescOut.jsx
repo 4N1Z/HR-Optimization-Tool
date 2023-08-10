@@ -7,7 +7,7 @@ function JobDescOut() {
     return (
         <div>
             <Navbar name = "back" link = "/description_ranker"/>
-            <div className='HomeContainer'>
+            <div className='HomeContainer animate-fade-in-top-to-bottom'>
                 <div className="outputContainer">
                     <h2 className="titleOut">Result of Analysis</h2>
                     <div className="firstBox">

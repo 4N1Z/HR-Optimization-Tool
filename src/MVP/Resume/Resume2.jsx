@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { tick } from '../../assets/export';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../../Components/Navbar/Navbar';
 import axios from 'axios';
 import "./Resume.css"
+
 function Resume2() {
+    
+    const navigate = useNavigate();
 
 
     const [resumes, setResumes] = useState([]);
@@ -95,14 +98,14 @@ function Resume2() {
             console.log(error);
         }
 
+
         );
+        navigate('/output_resume')
     }
 
 
     return (
         <div>
-
-
             <Navbar name="Job Description" link="/description_ranker" />
             <div className="HomeContainer">
                 <div className="textContainer animate-fade-in-top-to-bottom">
@@ -127,7 +130,7 @@ function Resume2() {
                     {resumes.length > 0 && (
                         <div>
                             <h3>Uploaded Resumes:</h3>
-                            <ul className='uploadedResumeUl'>
+                            <ul className='uploadedResumeUl animate-fade-in'>
                                 {resumes.map((file, index) => (
                                     <li key={index} className='uploadedResumeList'>
                                         <span className='giveColor'>{file.name}</span>

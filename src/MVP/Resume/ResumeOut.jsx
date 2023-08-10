@@ -4,10 +4,16 @@ import { Link } from 'react-router-dom'
 import Navbar from '../../Components/Navbar/Navbar'
 
 function ResumeOut() {
+
+    const sendMail = () => {
+        alert('Mail Sent');
+        console.log('Mail Sent');
+    }
+
     return (
         <div>
             <Navbar name="back" link="/description_ranker" />
-            <div className='HomeContainer'>
+            <div className='HomeContainer animate-fade-in-top-to-bottom'>
                 <div className="outputContainer">
                     <h2 className="titleOut">Result of Analysis</h2>
                     <div className="firstBox">
@@ -17,7 +23,7 @@ function ResumeOut() {
                             <h1 className='resumeNumberOut'>240</h1>
                             <h2 className='resumeTitleOut'>Top Resumes</h2>
 
-                            <div className="topResumes">
+                            <div className="topResumes animate-fade-in">
                                 <div className="scoresNames">
                                     <h2>Name</h2>
                                     <div className="topRankers">
@@ -40,9 +46,10 @@ function ResumeOut() {
                                 </div>
                             </div>
 
-                            <Link to='/resume_ranker'>
-                                <button className="goToResume Btn"> <p>Correct</p> </button>
-                            </Link>
+                            {/* <Link to='/resume_ranker'>
+                                <button className="goToResume Btn"> <p>Send Mail</p> </button>
+                            </Link> */}
+                                <button onClick={sendMail} className="goToResume Btn"> <p>Send Mail</p> </button>
 
                         </div>
                     </div>

@@ -64,7 +64,7 @@ function JobDesc() {
 
   return (
     <div>
-      <Navbar name="Resume" link="/resume_ranker" />
+      <Navbar name="<" link="/" />
       <div className="HomeContainer">
 
         <div className="textContainer animate-fade-in-top-to-bottom">
@@ -74,7 +74,7 @@ function JobDesc() {
         </div>
 
         <form className="formStyle animate-fade-in" onSubmit={donotdeletefunction}>
-          <div className=" ">
+          <div className=" animate-fade-in">
             <button onClick={uploadJobDescription} className='smallBtnStyle  Btn'>Upload Job Description</button>
             <button onClick={handleSubmit} className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} id='jobDescBtn'>Analyse</button>
           </div>
