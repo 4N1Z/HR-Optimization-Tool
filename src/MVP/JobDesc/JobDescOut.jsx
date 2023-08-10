@@ -14,8 +14,6 @@ function JobDescOut() {
                         <h2>Here is the description after analysis</h2>
                         <div className="contentBox">
                             <div className="parent contentInsideBox">
-
-
                                 <div className="child1 itemBox">
                                     <h1>NAME</h1>
                                     <p>John Doe</p>
@@ -41,7 +39,6 @@ function JobDescOut() {
 
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

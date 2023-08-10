@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './JobDesc.css'
 import axios from 'axios';
 function JobDesc() {
@@ -26,37 +26,38 @@ function JobDesc() {
     fileInput.click();
 
     fileInput.addEventListener('change', (event) => {
-        var selectedFile = fileInput.files[0];
-        if (selectedFile && allowedFileTypes.includes(selectedFile.type)) {
-            setJobDesc(selectedFile);
-            console.log(selectedFile);
-            setAnalyseDisabled(false);
-        }
+      var selectedFile = fileInput.files[0];
+      if (selectedFile && allowedFileTypes.includes(selectedFile.type)) {
+        setJobDesc(selectedFile);
+        console.log(selectedFile);
+        setAnalyseDisabled(false);
+      }
     });
-}
+  }
 
   const handleSubmit = async () => {
     try {
       console.log('Uploading Job Description')
       const formData = {
-        'jobDesc' : jobDesc
+        'jobDesc': jobDesc
       }
-      await axios.post('http://192.168.29.116:8000/upload-job-description/', formData,{
+      await axios.post('http://192.168.29.116:8000/upload-job-description/', formData, {
         headers: {
-            'Content-Type': 'multipart/form-data'
+          'Content-Type': 'multipart/form-data'
         }
-    }).then((response) => {
-          console.log(response);
-        }
-        );
+      }).then((response) => {
+        console.log(response);
+      }
+      );
     } catch (error) {
       console.log(error);
     }
 
   };
+
   const donotdeletefunction = (event) => {
     event.preventDefault();
-};
+  };
 
   return (
     <div>
@@ -72,7 +73,7 @@ function JobDesc() {
         <form className="formStyle animate-fade-in" onSubmit={donotdeletefunction}>
           <div className=" ">
             <button onClick={uploadJobDescription} className='smallBtnStyle  Btn'>Upload Job Description</button>
-            <button onClick={handleSubmit} className={`smallBtnStyle Btn ${analyseDisabled ?'passive': ''}`} id='jobDescBtn'>Analyse</button>
+            <button onClick={handleSubmit} className={`smallBtnStyle Btn ${analyseDisabled ? 'passive' : ''}`} id='jobDescBtn'>Analyse</button>
           </div>
         </form>
         <div className="disclaimerTextBox animate-fade-in">
