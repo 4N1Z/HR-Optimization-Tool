@@ -11,7 +11,7 @@ function JobDesc() {
   const [jobDesc, setJobDesc] = useState(null);
   const allowedFileTypes = ['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
   const [analyseDisabled, setAnalyseDisabled] = useState(true);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const storedJobDesc = sessionStorage.getItem('jobDesc');
@@ -40,6 +40,7 @@ function JobDesc() {
   }
 
   const handleSubmit = async () => {
+    setLoading(true);
     try {
       console.log('Uploading Job Description')
       const formData = {
@@ -52,6 +53,7 @@ function JobDesc() {
         }
       }).then((response) => {
         console.log(response);
+        setLoading(false);
       }
       );
     } catch (error) {
