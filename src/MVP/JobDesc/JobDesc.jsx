@@ -47,6 +47,7 @@ function JobDesc() {
         'jobDesc': jobDesc
       }
       setLoading(true);
+
       await axios.post('http://192.168.29.116:8000/upload-job-description/', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -55,7 +56,7 @@ function JobDesc() {
         console.log(response);
         // console.log(response.data.analysis)
         // const analysisData = response.data.analysis;
-        navigate('/output_jobDescription', {analysisData});
+        navigate('/output_jobDescription', {state: analysisData});
         setLoading(false);
       }
       );

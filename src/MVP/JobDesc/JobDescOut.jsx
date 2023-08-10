@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 function JobDescOut() {
     const location = useLocation();
-    const analysisData = location.state.analysisData;
+    const analysisData = location.state;
     console.log(analysisData);
 
     return (
