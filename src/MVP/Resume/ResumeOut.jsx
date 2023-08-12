@@ -1,4 +1,4 @@
-import React from 'react'
+import { useRef, React, useEffect, useState } from 'react'
 import './Resume.css'
 import { Link } from 'react-router-dom'
 import Navbar from '../../Components/Navbar/Navbar'
@@ -6,23 +6,57 @@ import emailjs from 'emailjs-com';
 
 function ResumeOut() {
 
-    const sendMail = () => {
+    useEffect(() => {
+        emailjs.init("U86vKN8q0UPpIKmza");
+    }, []);
+
+    const serviceID = 'service_5ktc26c';
+    const templateID = 'template_tgpovaj';
+
+    // With the help pf useRef(), we can get the names and email from html file
+    // const emailRef = useRef();
+    // const nameRef = useRef();
+
+    const emailRef = 'aniz.bin14@gmail.com';
+    const nameRef = 'aniz';
+
+    const sendMail = async (e) => {
+        e.preventDefault();
+        const serviceId = 'service_5ktc26c';
+        const templateId = 'template_tgpovaj';
+
+        const recipients = ['aniz.bn14@gmail.com', 'anizbinnowshad@gmail.com', 'fahadpn330@gmail.com', 'anirudhdaya@gmail.com', 'aswinlalsct@gmail.com'];
+
         const templateParams = {
-            to_email: '20am014@sctce.ac.in',
-            subject: 'Hello from React!',
-            message: 'This is a test email sent from my React app.'
+            // to_email: recipients.join(', '),
+            mail_s: recipients,
+            subject: 'HR Interview Result',
+            // message: (
+            //     <CustomEmailTemplate
+            //       candidateName="John Doe"
+            //       positionName="Software Engineer"
+            //       companyName="ABC Corporation"
+            //       nextSteps="an interview, assessment, or assignment"
+            //     />
+            //   ),
+            message: 'company Name',
+            name: 'Aniz'
+
         };
-    
-        emailjs.send('service_5ktc26c', 'template_tgpovaj', templateParams, 'aniz')
-            .then(response => {
-                console.log('Mail Sent', response);
-                alert('Mail Sent');
-            })
-            .catch(error => {
-                console.error('Error sending mail:', error);
-                alert('Error sending mail');
-            });
+
+        try {
+            console.log('Loading started');
+            await emailjs.send(serviceId, templateId, templateParams);
+            alert('Email successfully sent! Check your inbox.');
+        } catch (error) {
+            console.log(error);
+            console.log('Error occurred');
+        } finally {
+            console.log('Loading finished');
+        }
     };
+
+
     return (
         <div>
             <Navbar name="back" link="/description_ranker" />
@@ -30,7 +64,7 @@ function ResumeOut() {
                 <div className="outputContainer">
                     <h2 className="titleOut">Result of Analysis</h2>
                     <div className="firstBox">
-                        
+
                         <div className="contentBox">
                             <h2 className='resumeTitleOut'>Total Resumes Analysed</h2>
                             <h1 className='resumeNumberOut'>240</h1>
@@ -58,12 +92,7 @@ function ResumeOut() {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* <Link to='/resume_ranker'>
-                                <button className="goToResume Btn"> <p>Send Mail</p> </button>
-                            </Link> */}
-
-                                <button onClick={sendMail} className="goToResume Btn"> <p>Send Mail</p> </button>
+                            <button onClick={sendMail} className="goToResume Btn"> <p>Send Mail</p> </button>
 
                         </div>
                     </div>
