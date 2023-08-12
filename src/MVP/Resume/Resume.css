@@ -115,6 +115,7 @@
 .topResumes {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
     gap: 8rem;
 }
 
@@ -149,4 +150,8 @@
     font-weight: 500;
     line-height: 3.5rem; /* 206.667% */
     text-transform: capitalize;
+}
+
+.itemsInResume{
+    text-align: left;
 }

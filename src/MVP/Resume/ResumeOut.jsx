@@ -3,8 +3,21 @@ import './Resume.css'
 import { Link } from 'react-router-dom'
 import Navbar from '../../Components/Navbar/Navbar'
 import emailjs from 'emailjs-com';
+import { useLocation } from 'react-router-dom';
+import axios from 'axios';
 
 function ResumeOut() {
+
+    // const location = useLocation();
+    // const { shortlistedEmails } = location.state;
+    // console.log(shortlistedEmails, shortlistedScore)
+
+    const location = useLocation();
+    // const [ shortlistedEmails, shortlistedScore ] = location.state;
+    const shortlistedEmails = location.state[0];
+    const shortlistedScore = location.state[1];
+    const lengthOfPassed = shortlistedEmails.length;
+
 
     useEffect(() => {
         emailjs.init("U86vKN8q0UPpIKmza");
@@ -59,7 +72,7 @@ function ResumeOut() {
 
     return (
         <div>
-            <Navbar name="back" link="/description_ranker" />
+            <Navbar name="back" link="/resume_rankerForMVP" />
             <div className='HomeContainer animate-fade-in-top-to-bottom'>
                 <div className="outputContainer">
                     <h2 className="titleOut">Result of Analysis</h2>
@@ -67,29 +80,24 @@ function ResumeOut() {
 
                         <div className="contentBox">
                             <h2 className='resumeTitleOut'>Total Resumes Analysed</h2>
-                            <h1 className='resumeNumberOut'>240</h1>
+                            <h1 className='resumeNumberOut'>{lengthOfPassed}</h1>
                             <h2 className='resumeTitleOut'>Top Resumes</h2>
 
                             <div className="topResumes animate-fade-in">
                                 <div className="scoresNames">
                                     <h2>Name</h2>
-                                    <div className="topRankers">
-                                        <h4>ANIZ BIN NOwshad</h4>
-                                        <h4>ANIZ BIN NOwshad</h4>
-                                        <h4>ANIZ BIN NOwshad</h4>
-                                        <h4>ANIZ BIN NOwshad</h4>
-                                        <h4>ANIZ BIN NOwshad</h4>
+                                    <div className="itemsInResume">
+                                        {shortlistedEmails.map((item, index) => (
+                                            <h4 key={index}>{item}</h4>
+                                        ))}
                                     </div>
+
                                 </div>
                                 <div className="scoresNames">
-                                    <h2>Scores</h2>
-                                    <div className="topRankers">
-                                        <h4>76</h4>
-                                        <h4>76</h4>
-                                        <h4>76</h4>
-                                        <h4>76</h4>
-                                        <h4>76</h4>
-                                    </div>
+                                    <h2>Name</h2>
+                                    {shortlistedScore.map((item, index) => (
+                                        <h4 key={index}>{item}</h4>
+                                    ))}
                                 </div>
                             </div>
                             <button onClick={sendMail} className="goToResume Btn"> <p>Send Mail</p> </button>

@@ -64,7 +64,7 @@ function Home() {
 
         <div className="navigationBox animate-fade-in-top-to-bottom">
           <div className="forNavBox">
-            <Link to={'/resume_ranker'}>
+            <Link to={'/resume_rankerForMVP'}>
               <h2 className="navTitle">Rank your Resume</h2>
             </Link>
             <p className="navDesc">Art direction is the process of bringing together all of the creative 
